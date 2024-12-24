@@ -40,9 +40,9 @@ export default class OpenAILikeProvider extends BaseProvider {
 
       const res = (await response.json()) as any;
 
-      return res.data.map((model: any) => ({
-        name: model.id,
-        label: model.id,
+      return res.map((model: any) => ({
+        name: model.name,
+        label: model.name,
         provider: this.name,
         maxTokenAllowed: 8000,
       }));
